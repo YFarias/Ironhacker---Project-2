@@ -45,7 +45,7 @@ GET	/Game	Renders Game-list view.	F
 GET	/Game/details/:id	Renders Game-details view for the USERS.	F
 
 Models
-Game model Y
+Game model Y (done!)
 
 {
     name: String,
