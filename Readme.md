@@ -21,31 +21,31 @@ result - As a user I want to see the list and my preferences.
 Server Routes (Back-end):
 Method	Route	Description	Request - Body
 
-GET	/	Main page route. Renders home index view.	
+GET	/	Main page route. Renders home index view.	 F
 
-GET	/login	Renders login form view.
-POST	/login	Sends Login form data to the server.{ email, password }
+GET	/login	Renders login form view. Y
+POST	/login	Sends Login form data to the server.{ email, password } Y
 
-GET	/signup	Renders signup form view.
-POST	/signup	Sends Sign Up info to the server and creates user in the DB.{email, password}
+GET	/signup	Renders signup form view. F
+POST	/signup	Sends Sign Up info to the server and creates user in the DB. F{email, password}
 
-GET	/private/edit-profile	Private route. Renders edit-profile form view.	
+GET	/private/edit-profile	Private route. Renders edit-profile form view.	Y
 
-PUT	/private/edit-profile	Private route. Sends edit-profile info to server and updates user in DB.	{ email, password, [Name],}
+PUT	/private/edit-profile	Private route. Sends edit-profile info to server and updates user in DB.	{ email, password, [Name],} Y
 
-GET	/private/favorites	Private route. Render the favorites view.	
-POST	/private/favorites/	Private route. Adds a new favorite for the current user.	{ gameName, category, URL}
+GET	/private/favorites	Private route. Render the favorites view.	F
+POST	/private/favorites/	Private route. Adds a new favorite for the current user.	{ gameName, category, URL} F
 
-GET	/private/Creator/ Private route. Renders edit-profile form view.	
-PUT	/private/edit-profile	Private route. Sends edit-profile info to server and updates user in DB.	{ Gamename, category, [URL]}
+GET	/private/Creator/ Private route. Renders edit-profile form view.	Y
+PUT	/private/edit-profile	Private route. Sends edit-profile info to server and updates user in DB.	{ Gamename, category, [URL]}Y
 
-DELETE	/private/favorites/:GamesId	Private route. Deletes the existing favorite from the current user.	
+DELETE	/private/favorites/:GamesId	Private route. Deletes the existing favorite from the current user.	 Y
 
-GET	/Game	Renders Game-list view.	
-GET	/Game/details/:id	Renders Game-details view for the USERS.	
+GET	/Game	Renders Game-list view.	F
+GET	/Game/details/:id	Renders Game-details view for the USERS.	F
 
 Models
-Game model
+Game model Y
 
 {
     name: String,
@@ -61,7 +61,7 @@ ref:, .........
 
 }
 
-User model
+User model F 
 
 {
   name: String,
@@ -70,12 +70,7 @@ User model
   favorites: [mongoose.type.Schema.ObjectId , ref.....]
 }
 
-Favorites model
 
-{
-  gameId: String,
-
-}
 
 
 Links
