@@ -1,14 +1,18 @@
 <form action="/games" method="POST">
+  
   <label for="">Name:</label>
   <input type="text" name="title" id="">
+  
   <label for="">Category:</label>
   <select name="cast" multiple>
     {{#each gamesFromDB}}
       <option value="{{this._id}}">{{this.name}}</option>
     {{/each}}
   </select>
+  
   <label for="">URL:</label>
   <input type="text" name="plot" id="">
+  
   <label for="">Creator:</label>
   <input type="text" name="plot" id="">
   
