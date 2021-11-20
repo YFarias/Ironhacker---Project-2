@@ -31,13 +31,13 @@ router.post("/games", (req, res) => {
   // POST /game/gameId
   router.post("/views/games/gamelist/:gamesId", (req, res) => {
     Album.findOneAndUpdate({ _id: req.params.gamesId }, req.body, { new: true })
-      .then((gameId) => res.json({ data: game }))
+      .then((gameId) => res.render("/views/games/gamelist/:gameId",{ data: gameId }))
       .catch((error) => console.log(error));
   });
   
   // POST /games/:gamesId/delete
   router.post("/views/games/gamelist/:gamesId/delete", (req, res) => {
-    Album.findByIdAndDelete(req.params.gameId)
+    Game.findByIdAndDelete(req.params.gamesId)
       .then(() => res.sendStatus(204))
       .catch((error) => console.log(error));
   });
