@@ -5,6 +5,7 @@ const User = require("./../models/User.model");
 const Game = require("./../models/Game.model");
 const bcrypt = require("bcryptjs");
 const zxcvbn = require("zxcvbn");
+const isLoggedIn = require("./../middleware/isLoggedIn");
 
 //Defining the saltrounds to encrypt the password
 const saltRounds = 10;
