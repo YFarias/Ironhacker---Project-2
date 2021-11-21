@@ -1,1 +1,23 @@
 <h1>Signup page</h1>
+
+<form id="form" action="/signup" method="POST">
+
+  <label for="username">Username</label>
+  <input type="text" name="username" placeholder="Your username" />
+  <br>
+
+  <label for="email">Email</label> 
+  <input type="email" name="email" placeholder="Your email"/>
+  <br>
+
+  <label for="password">Password</label>
+  <input type="password" name="password" placeholder="Your password"/>
+    <br>
+
+  <button type="submit">Sign up</button>
+</form>
+
+
+{{#if errorMessage}}
+  <div class="error-message">{{errorMessage}}</div>
+{{/if}}

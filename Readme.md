@@ -21,13 +21,13 @@ result - As a user I want to see the list and my preferences.
 Server Routes (Back-end):
 Method	Route	Description	Request - Body
 
-GET	/	Main page route. Renders home index view.	 F
+GET	/	Main page route. Renders home index view.	 F (done)
 
 GET	/login	Renders login form view. Y
 POST	/login	Sends Login form data to the server.{ email, password } Y
 
-GET	/signup	Renders signup form view. F
-POST	/signup	Sends Sign Up info to the server and creates user in the DB. F{email, password}
+GET	/signup	Renders signup form view. F (done)
+POST	/signup	Sends Sign Up info to the server and creates user in the DB. F{email, password}  (done)
 
 GET	/private/edit-profile	Private route. Renders edit-profile form view.	Y
 

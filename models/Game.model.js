@@ -9,7 +9,7 @@ const gameSchema = new Schema(
       enum:["Action","Adventure","War","Strategy","Sports",
       "RPG","Race","Simulation"]},
     url: {type: String},
-    username: {type: [mongoose.type.Schema.ObjectId],  ref: 'User'},
+    username: {type: [Schema.Types.ObjectId],  ref: 'User'},
   
   }
 );
