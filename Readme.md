@@ -44,6 +44,10 @@ DELETE	/private/favorites/:GamesId	Private route. Deletes the existing favorite 
 GET	/Game	Renders Game-list view.	F
 GET	/Game/details/:id	Renders Game-details view for the USERS.	F
 
+
+GET /profile - Added by F
+
+
 Models
 Game model Y (done!)
 
