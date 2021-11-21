@@ -1,8 +1,13 @@
-/* const { get } = require("mongoose"); what is this? */
+ const { get } = require("mongoose"); //what is this? - F
 
 const router = require("express").Router()
 const User = require("./../models/User.model");
 const Game = require("./../models/Game.model");
+const bcrypt = require("bcryptjs");
+const zxcvbn = require("zxcvbn");
+
+//Defining the saltrounds to encrypt the password
+const saltRounds = 10;
 //Auth routes go here
 
 
@@ -52,6 +57,37 @@ router.post("/signup", (req, res) => {
                 "Password must have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter."
         })
     }
+
+
+    //Check if username is taken
+
+    User.findOne({username: username})
+        .then((foundUser) => {
+            if(foundUser){
+                throw new Error("Username is taken.");
+            }
+
+            //Generating salt string
+            return bcrypt.genSalt(saltRounds)
+        })
+
+        .then((salt) => {
+            //Encrypting the password
+            return bcrypt.hash(password, salt);
+        })
+
+        .then((hashedPassword) => {
+            //Create a new user
+            return User.create({username: username, email: email, password: hashedPassword});
+        })
+        .then((createdUser) => {
+            //Redirecting the created user to the homepage
+            res.redirect("/");
+        })
+
+        .catch((err) => {
+            res.render("auth/signup", {errorMessage: err.message || "Error while signing up, try again."})
+        })
 })
 
 
