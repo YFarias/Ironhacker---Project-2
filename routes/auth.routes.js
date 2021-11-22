@@ -92,6 +92,80 @@ router.post("/signup", (req, res) => {
 })
 
 
+//Login
+/*
+POST	/login	Sends Login form data 
+to the server.{ email, password } Y
+*/
+router.get("/login", (req,res)=>{
+    res.render("auth/login")
+})
+
+
+router.post("/login", (req,res) => {
+ const {email,password} = req.body
+//Check if email and password are provided
+ const emailNotProvided = !email || email === "";
+ const passwordNotProvided = !password || password === "";
+
+ if (emailNotProvided || passwordNotProvided) {
+     res.render("auth/login", {
+         errorMessage: "Provide email and password.",
+     })
+     
+     return;
+    }
+
+let user;
+
+//check if the user exist 
+
+User.findOne({email:email})
+    .then ((foundUser)=>{
+        user = foundUser;
+
+        if (!foundUser){
+            throw new Error ("Login failed, try again!")
+        }
+
+        //Compare the Password 
+        return bcrypt.compare(password,foundUser.password);
+        
+    })
+
+    .then((isCorrectPassword)=>{
+        if (!isCorrectPassword) {
+            throw new Error ("Login failed, try again!");
+        }else if (isCorrectPassword) {
+            req.session.user = user
+            res.redirect("/")
+        }
+    })
+    .catch((err)=>{
+        
+        res.render("auth/login", {
+            errorMessage: err.message || "Provide email and password."
+        });
+    });
+
+        
+ 
+
+
+
+
+
+
+
+
+
+});
+
+
+
+
+
+
 
 
 

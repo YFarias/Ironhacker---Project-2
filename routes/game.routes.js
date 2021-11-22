@@ -36,12 +36,13 @@ router.post("/games", (req, res) => {
   });
   
   // POST /games/:gamesId/delete
-  router.post("/views/games/gamelist/:gamesId/delete", (req, res) => {
+  router.post("/games/gamelist/:gamesId/delete", (req, res) => {
     Game.findByIdAndDelete(req.params.gamesId)
       .then(() => res.sendStatus(204))
       .catch((error) => console.log(error));
   });
-  
+
+ 
   module.exports = router;
 
 
