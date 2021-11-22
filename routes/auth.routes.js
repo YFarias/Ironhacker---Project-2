@@ -19,7 +19,12 @@ GET	/login	Renders login form view.
 POST	/login	Sends Login form data 
 to the server.{ email, password } Y
 */
-
+router.get("/", (req,res)=>{
+    let userisLoggedIn = false;
+    if (req.session.user) {
+        (userisLoggedIn = true)
+    }
+})
 
 
 //SIGN UP ROUTES
@@ -121,6 +126,7 @@ let user;
 //check if the user exist 
 
 User.findOne({email:email})
+    
     .then ((foundUser)=>{
         user = foundUser;
 
