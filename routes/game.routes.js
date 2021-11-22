@@ -43,9 +43,9 @@ router.get("/games/add", (req, res) => {
 
 router.post("/games/add", (req, res) => {
   console.log(req.body)
-  const { title, creator} = req.body;
+  const { title, category} = req.body;
 
-  Game.create({title, creator})
+  Game.create({title, category})
   .then((createdGame) => {
       console.log("game created" , createdGame)
       res.redirect("/games")

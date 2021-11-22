@@ -4,7 +4,7 @@ const { Schema, model } = require("mongoose");
 const gameSchema = new Schema(
   {
     title: {type: String, require:true},
-    category: {type: String}
+    category: {type: String, default: 'N/D'}
     /* category: {
       type:String,
       enum:["Action","Adventure","War","Strategy","Sports",

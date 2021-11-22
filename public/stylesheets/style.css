@@ -26,6 +26,22 @@ h1 {
   color: 15px;
 }
 
+.game-container{
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  flex-wrap: nowrap;
+  text-align: center;
+  line-height: 5px;
+  
+}
+
+.game-img{
+  height: 150px;
+  border-bottom: 2px solid black;
+  
+}
 form{
   
   margin: auto;
@@ -40,7 +56,7 @@ form{
   color: white;
   background-color: black;
   bottom: 0;
-  position: absolute;
+  
   width: 100%;
   height: 100px;
   text-align: center;
