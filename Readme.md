@@ -24,7 +24,7 @@ Method	Route	Description	Request - Body
 GET	/	Main page route. Renders home index view.	 F (done)
 
 GET	/login	Renders login form view. Y
-POST	/login	Sends Login form data to the server.{ email, password } Y
+POST	/login	Sends Login form data to the server.{ email, password } Y (done)
 
 GET	/signup	Renders signup form view. F (done)
 POST	/signup	Sends Sign Up info to the server and creates user in the DB. F{email, password}  (done)
