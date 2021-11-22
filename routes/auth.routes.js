@@ -143,6 +143,7 @@ router.post("/login", (req,res) => {
         errorMessage: err.message || "Provide username and password.",
       });
     });
+    console.log("Login ativo ") //TEST IF LOGIN IS TRUE 
 });
 
 //logout
@@ -153,6 +154,7 @@ router.get("/logout", isLoggedIn, (req,res) =>{
         }
       res.redirect("/");
     });
+    
 });
 
 
