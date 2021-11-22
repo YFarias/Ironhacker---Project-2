@@ -6,6 +6,7 @@ const Game = require("./../models/Game.model");
 const bcrypt = require("bcryptjs");
 const zxcvbn = require("zxcvbn");
 const isLoggedIn = require("./../middleware/isLoggedIn");
+const errorHandling = require("../error-handling");
 
 //Defining the saltrounds to encrypt the password
 const saltRounds = 10;
@@ -20,14 +21,6 @@ POST	/login	Sends Login form data
 to the server.{ email, password } Y
 */
 
-/*
-router.get("/", (req,res)=>{
-    let userisLoggedIn = false;
-    if (req.session.user) {
-        (userisLoggedIn = true)
-    }
-})
-*/
 
 //SIGN UP ROUTES
 
@@ -149,6 +142,16 @@ router.post("/login", (req,res) => {
       res.render("auth/login", {
         errorMessage: err.message || "Provide username and password.",
       });
+    });
+});
+
+//logout
+router.get("/logout", isLoggedIn, (req,res) =>{
+    req.session.destroy ((err)=> {
+        if(err) {
+            return res.render("error");
+        }
+      res.redirect("/");
     });
 });
 
