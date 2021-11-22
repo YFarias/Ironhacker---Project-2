@@ -3,12 +3,12 @@ const { Schema, model } = require("mongoose");
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const gameSchema = new Schema(
   {
-    name: {type:String, require:true},
-    category: {
+    title: {type:String, require:true},
+    /* category: {
       type:String,
       enum:["Action","Adventure","War","Strategy","Sports",
       "RPG","Race","Simulation"]},
-    url: {type: String},
+    url: {type: String}, */
     username: {type: [Schema.Types.ObjectId],  ref: 'User'},
   
   }

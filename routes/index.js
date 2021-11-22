@@ -15,6 +15,8 @@ router.get("/", (req, res, next) => {
 });
 
 
+
+
 //games routes
 const gamesRouter = require('../routes/game.routes');
 

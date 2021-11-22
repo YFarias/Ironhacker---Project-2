@@ -5,24 +5,55 @@ const User = require("../models/User.model");
 const Game = require("../models/Game.model");
 
 
-//!Game Routes
+//Game Routes
 
-//Game list router 
-// GET /games
+
+//Game search 
+
+router.get("/search", (req, res) => {
+  const gameTitle = req.query.gameTitle; 
+
+  //Finding the game we want in a more fluid way
+  Game.find({title: { $regex: gameTitle, $option: "i"} })
+  .then((gameList) => {
+    res.render("games/gamelist", {gameList: gameList})
+  })
+
+  .catch((err) => console.log(err));
+})
+
+
+
+//Games router
 router.get("/games", (req, res) => {
   res.render("games/gamelist")
-});
+})
 
-router.post("/games", (req, res) => {
-    res.render("games/gamelist")
-  });
+
+//Adding a game to the library
+
+router.get("/games/add", (req, res) => {
+  res.render("games/addgame");
+})
+
+router.post("/games/add", (req, res) => {
+  const { title, username} = req.body;
+
+  Game.create({title, username})
+  console.log("game created")
+    .then((createdGame) => {
+      res.render("games/addgame")
+    })
+
+    .catch((err) => console.log(err))
+})
+
   
-  
 
 
 
-  // GET /game find by id
-  router.get("/views/games/gamelist.hbs", (req, res) => {
+  //* / GET /game find by id
+  /* router.get("/views/games/gamelist.hbs", (req, res) => {
     Game.findOne({ _id: req.params.gameId })
       .then((game) => res.render({ data: game }))
       .catch((error) => console.log(error));
@@ -40,7 +71,7 @@ router.post("/games", (req, res) => {
     Game.findByIdAndDelete(req.params.gamesId)
       .then(() => res.sendStatus(204))
       .catch((error) => console.log(error));
-  });
+  }); */ 
 
  
   module.exports = router;
