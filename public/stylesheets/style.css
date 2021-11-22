@@ -5,12 +5,15 @@ body {
 }
 
 
+.nav-container{
+  background-color:  #00b7ff;
+  height:100px;
+  
+}
 
 .nav-bar {
   width: 100%;
   display: flex;
-  background-color: #00b7ff;
-  
 
 }
 
@@ -24,6 +27,14 @@ a {
 
 h1 {
   color: 15px;
+}
+
+.search-bar{
+  width: 40%;
+  display: flex;
+  margin-left: 15px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .game-container{

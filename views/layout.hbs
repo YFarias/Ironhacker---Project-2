@@ -10,6 +10,7 @@
 <body>
 
   {{!-- Nav bar with the options  --}}
+  <div class="nav-container"> <!-- Contains the nav-bar and the search-bar--> 
   <nav class="nav-bar">
     <a href="/">Home</a>
     <a href="/games">Games</a>
@@ -17,8 +18,10 @@
     <a href="/signup">Signup</a>
     <a href="/games/add">Add game</a>
     
-
   </nav>
+    <input type="text" placeholder="search game" class="search-bar"> 
+    
+  </div>
   {{{body}}}
   <div class="footer">
     <p>Developed by team FY - Fabio & Yuri</p>
