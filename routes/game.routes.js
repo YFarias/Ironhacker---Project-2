@@ -13,9 +13,9 @@ const Game = require("../models/Game.model");
 router.get("/search", (req, res) => {
   const gameTitle = req.query.gameTitle; 
 
-  //Finding the game we want in a more fluid way
-  Game.find({title: { $regex: gameTitle, $option: "i"} })
-  .then((gameList) => {
+  //Finding the game we want in a more fluid way    {title: { $regex: gameTitle, $option: "i"} }
+  Game.find( {title: { $regex: gameTitle, $options: "i"} })
+  .then((gameList) => { //array with games found 
     res.render("games/gamelist", {gameList: gameList})
   })
 
@@ -26,7 +26,12 @@ router.get("/search", (req, res) => {
 
 //Games router
 router.get("/games", (req, res) => {
-  res.render("games/gamelist")
+  Game.find()
+  .then((gameList) => { //array with games found 
+    res.render("games/gamelist", {gameList: gameList})
+  })
+
+  .catch((err) => console.log(err));
 })
 
 
