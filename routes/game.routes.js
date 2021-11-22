@@ -10,7 +10,7 @@ const Game = require("../models/Game.model");
 
 //Game search 
 
-router.get("/search", (req, res) => {
+/* router.get("/search", (req, res) => {
   const gameTitle = req.query.gameTitle; 
 
   //Finding the game we want in a more fluid way    {title: { $regex: gameTitle, $option: "i"} }
@@ -20,7 +20,7 @@ router.get("/search", (req, res) => {
   })
 
   .catch((err) => console.log(err));
-})
+}) */
 
 
 
@@ -42,12 +42,13 @@ router.get("/games/add", (req, res) => {
 })
 
 router.post("/games/add", (req, res) => {
-  const { title, username} = req.body;
+  console.log(req.body)
+  const { title, creator} = req.body;
 
-  Game.create({title, username})
-  console.log("game created")
-    .then((createdGame) => {
-      res.render("games/addgame")
+  Game.create({title, creator})
+  .then((createdGame) => {
+      console.log("game created" , createdGame)
+      res.redirect("/games")
     })
 
     .catch((err) => console.log(err))
