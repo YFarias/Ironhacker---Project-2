@@ -105,79 +105,52 @@ POST	/login	Sends Login form data
 to the server.{ email, password } Y
 */
 router.get("/login", (req,res)=>{
-    res.render("auth/login")
-})
+    res.render("auth/login");
+});
 
 
 router.post("/login", (req,res) => {
- const {username,password} = req.body
+ const { username, password } = req.body;
 //Check if email and password are provided
+
  const usernameNotProvided = !username || username === "";
  const passwordNotProvided = !password || password === "";
 
  if (usernameNotProvided || passwordNotProvided) {
      res.render("auth/login", {
-         errorMessage: "Provide name and password.",
+         errorMessage: "Provide username and password.",
      })
      
      return;
     }
+    
+    let user;
+  // Check if the user exists
 
-let user;
+  User.findOne({ username: username })
+    .then((foundUser) => {
+      user = foundUser;
 
-//check if the user exist 
+      if (!foundUser) {
+        throw new Error("Wrong credentials");
+      }
 
-User.find({username:username})
-console.log("username:", username)
-    .then((foundUser)=>{
-        user = foundUser;
-        console.log("user:", user)
-        if (!foundUser){
-            throw new Error ("Login failed, try again!")
-        };
-
-        //Compare the Password 
-        return bcrypt.compare(password,foundUser.password);
-        
+      // Compare the passwords
+      return bcrypt.compare(password, foundUser.password);
     })
-
     .then((isCorrectPassword) => {
-        if (!isCorrectPassword) {
-            throw new Error ("Login failed, try again!");
-        }else if (isCorrectPassword) {
-            req.session.user = user
-            res.redirect("/")
-        }
+      if (!isCorrectPassword) {
+        throw new Error("Wrong credentials");
+      } else if (isCorrectPassword) {
+        res.redirect("/");
+      }
     })
-    .catch((err)=>{
-        
-        res.render("auth/login", {
-            errorMessage: err.message || "Provide username and password."
-        });
+    .catch((err) => {
+      res.render("auth/login", {
+        errorMessage: err.message || "Provide username and password.",
+      });
     });
-
-        
- 
-
-
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = router;
