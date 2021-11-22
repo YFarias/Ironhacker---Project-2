@@ -8,6 +8,8 @@ router.get("/", (req, res, next) => {
 });
 
 
+
+
 //games routes
 const gamesRouter = require('../routes/game.routes');
 //app.use('/', gamesRouter); // what is this? its not defined and giving an error
