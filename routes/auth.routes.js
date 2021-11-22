@@ -19,13 +19,15 @@ GET	/login	Renders login form view.
 POST	/login	Sends Login form data 
 to the server.{ email, password } Y
 */
+
+/*
 router.get("/", (req,res)=>{
     let userisLoggedIn = false;
     if (req.session.user) {
         (userisLoggedIn = true)
     }
 })
-
+*/
 
 //SIGN UP ROUTES
 
@@ -108,14 +110,14 @@ router.get("/login", (req,res)=>{
 
 
 router.post("/login", (req,res) => {
- const {email,password} = req.body
+ const {username,password} = req.body
 //Check if email and password are provided
- const emailNotProvided = !email || email === "";
+ const usernameNotProvided = !username || username === "";
  const passwordNotProvided = !password || password === "";
 
- if (emailNotProvided || passwordNotProvided) {
+ if (usernameNotProvided || passwordNotProvided) {
      res.render("auth/login", {
-         errorMessage: "Provide email and password.",
+         errorMessage: "Provide name and password.",
      })
      
      return;
@@ -125,21 +127,21 @@ let user;
 
 //check if the user exist 
 
-User.findOne({email:email})
-    
-    .then ((foundUser)=>{
+User.find({username:username})
+console.log("username:", username)
+    .then((foundUser)=>{
         user = foundUser;
-
+        console.log("user:", user)
         if (!foundUser){
             throw new Error ("Login failed, try again!")
-        }
+        };
 
         //Compare the Password 
         return bcrypt.compare(password,foundUser.password);
         
     })
 
-    .then((isCorrectPassword)=>{
+    .then((isCorrectPassword) => {
         if (!isCorrectPassword) {
             throw new Error ("Login failed, try again!");
         }else if (isCorrectPassword) {
@@ -150,7 +152,7 @@ User.findOne({email:email})
     .catch((err)=>{
         
         res.render("auth/login", {
-            errorMessage: err.message || "Provide email and password."
+            errorMessage: err.message || "Provide username and password."
         });
     });
 
