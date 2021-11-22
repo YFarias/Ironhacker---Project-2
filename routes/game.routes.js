@@ -7,20 +7,20 @@ const Game = require("../models/Game.model");
 
 //!Game Routes
 
-//Create new Game
+//Game list router 
+// GET /games
+router.get("/games", (req, res) => {
+  res.render("games/gamelist")
+});
+
 router.post("/games", (req, res) => {
-    Game.create(req.body)
-      .then((games) => res.render("/views/games/addgame.hbs",{ data: games }))
-      .catch((error) => console.log(error));
+    res.render("games/gamelist")
   });
   
-  // GET /games
-  router.get("/games", (req, res) => {
-    Game.find()
-      .then((games) => res.render("/views/games/gamelist.hbs",{ data: games }))
-      .catch((error) => console.log(error));
-  });
   
+
+
+
   // GET /game find by id
   router.get("/views/games/gamelist.hbs", (req, res) => {
     Game.findOne({ _id: req.params.gameId })
