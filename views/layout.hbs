@@ -19,8 +19,13 @@
     <a href="/games/add">Add game</a>
     
   </nav>
-    <input type="text" placeholder="search game" class="search-bar"> 
-    
+    <!-- container for the searchbar -->
+    <div class="search-container">
+      <form action="/search" method="GET" class="search-form">
+        <input type="text" name="gameTitle" placeholder="search game" class="search-bar"> 
+        <button type="submit" class="search-btn">Search</button>
+      </form>
+    </div>
   </div>
   {{{body}}}
   <div class="footer">

@@ -1,16 +1,16 @@
 
-<h1>Game List</h1>
+<h1 class="title">Game List</h1>
 
 
 {{#each gameList}}
-
-<div class="game-container" style="border: 1px solid black;">
-  <div class="game-img">
-    <img src="https://tinyurl.com/96bb7ks" alt="game-cover" class="game-img">
-  </div>
+<div class="wrap">
+  <div class="game-container">
+    <div class="game-img">
+      <img src="https://tinyurl.com/96bb7ks" alt="game-cover" class="game-img">
+    </div>
   <p><b>Title:</b> {{title}}</p>
   <p><b>Category:</b> {{category}}</p>
-
+  </div>
 </div>
 
 {{/each}}

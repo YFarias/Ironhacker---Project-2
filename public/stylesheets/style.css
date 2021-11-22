@@ -7,7 +7,8 @@ body {
 
 .nav-container{
   background-color:  #00b7ff;
-  height:100px;
+  height:110px;
+  
   
 }
 
@@ -29,31 +30,67 @@ h1 {
   color: 15px;
 }
 
-.search-bar{
-  width: 40%;
+/* Search bar styling */
+.search-form{
+  width: 100%;
   display: flex;
   margin-left: 15px;
   border-radius: 10px;
   padding: 5px;
+  
+
+}
+.search-container{ /* This contains the search input type and the button */ 
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.search-bar{
+  width: 30%;
+  display: flex;
+  border-radius: 10px;
+  padding: 5px;
+  
+}
+
+.search-btn{
+  border-radius: 5px;
+  background-color: #00a6e7;
+  color: white;
+}
+
+/* Style for the game list */
+
+.title{
+  text-align: center;
+  margin-top: 4%;
 }
 
 .game-container{
   width: 15%;
-  display: flex;
+  border: 1px solid black;
   flex-direction: column;
   margin-bottom: 10px;
   flex-wrap: nowrap;
   text-align: center;
   line-height: 5px;
+  margin-left: 2%;
+  
   
 }
+
 
 .game-img{
   height: 150px;
   border-bottom: 2px solid black;
+  display: flex;
+  justify-content: center;
   
 }
-form{
+
+/* Stylling for the authentication forms */
+.auth-form{
   
   margin: auto;
   display: flex;
@@ -67,8 +104,8 @@ form{
   color: white;
   background-color: black;
   bottom: 0;
-  position: fixed;
   width: 100%;
   height: 100px;
   text-align: center;
+  
 }
