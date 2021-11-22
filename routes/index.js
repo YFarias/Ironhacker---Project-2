@@ -11,7 +11,7 @@ router.get("/", (req, res, next) => {
     userIsLoggedIn = true;
   }
 
-  res.render("/index", { userIsLoggedIn: userIsLoggedIn });
+  res.render("index", { userIsLoggedIn: userIsLoggedIn });
 });
 
 
