@@ -1,13 +1,13 @@
-<form id="form" action="Edit" method="POST" class="">
+<form id="form" action="/edit" method="POST" class="">
 <h1>Edit profile</h1>
 
 
   <label for="username">Username</label>
-  <input type="text" name="username" placeholder="Your username" />
+  <input type="text" name="username" value="{{user.username}}" />
   <br>
 
   <label for="password">Password</label>
-  <input type="password" name="password" placeholder="Your password"/>
+  <input type="password" name="password"  value="{{user.password}}"/>
     <br>
 
   <button type="submit">Submit</button>
