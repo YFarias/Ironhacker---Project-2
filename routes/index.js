@@ -27,7 +27,13 @@ const gamesRouter = require('../routes/game.routes');
 
 // Get /private profile view
 router.get("/profile", isLoggedIn, (req,res,next) =>{
-  res.render("secret-view");
+
+  //If the user is still logged the layout with profile and logout still show
+  let userIsLoggedIn = false;
+  if(req.session.user) {
+    userIsLoggedIn = true
+  }
+  res.render("profile", { userIsLoggedIn: userIsLoggedIn });
   
 });
 
