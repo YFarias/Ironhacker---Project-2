@@ -25,7 +25,8 @@ to the server.{ email, password } Y
 //SIGN UP ROUTES
 
 router.get("/signup", (req, res) => {
-    res.render('auth/signup')
+  
+  res.render('auth/signup',{ userIsLoggedIn: userIsLoggedIn } )
 });
 
 
