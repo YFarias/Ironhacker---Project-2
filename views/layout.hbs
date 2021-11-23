@@ -12,21 +12,27 @@
 
   {{!-- Nav bar with the options  --}}
   <div class="nav-container"> <!-- Contains the nav-bar and the search-bar--> 
-  <nav class="nav-bar">
-    <a href="/">Home</a>
-    <a href="/games">Games</a>
-    <a href="/login">Login</a>
-    <a href="/signup">Signup</a>
-    <a href="/games/add">Add game</a>
+  <div class="nav-wrap"> <!-- contains both nav-bars-->
+    <nav class="nav-bar">
+      <a href="/">Home</a>
+      <a href="/games">Games</a>
+      <a href="/games/add">Add game</a>
 
-<!-- This icons will show up if the user is logged in--> 
-    {{#if userIsLoggedIn}}
-    <a href="/profile">Profile</a>
-    <a href="/logout">Logout</a>
-   {{/if}}
-    
-  </nav>
+      <!-- To do: Make these disappear when logged in--> 
+      <a href="/login">Login</a>
+      <a href="/signup">Signup</a>
 
+    </nav>
+
+    <nav class="nav-end">
+    <!-- This icons will show up if the user is logged in--> 
+      {{#if userIsLoggedIn}}
+      <a href="/profile" >Profile</a>
+      <a href="/logout">Logout</a>
+     {{/if}}
+
+    </nav>
+  </div>
   
     <!-- container for the searchbar -->
     <div class="search-container">

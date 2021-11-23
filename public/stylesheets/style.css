@@ -9,12 +9,18 @@ body {
 .nav-container{
   background-color:  #00b7ff;
   height:110px;
-  
-  
 }
 
+
+.nav-wrap{
+  display: flex;
+}
+
+
+/* NAV-BAR ON THE LEFT STYLES */
+
 .nav-bar {
-  width: 100%;
+  width: 85%;
   display: flex;
 
 }
@@ -27,9 +33,32 @@ a {
   
 }
 
-h1 {
-  color: 15px;
+
+/* NAV-BAR ON THE RIGHT STYLES */
+
+.nav-end{
+  display: flex;
+  text-align: center;
+  width: 15%;
+  
 }
+
+.nav-end a{
+  color: white;
+  height: 20px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-right: 15px;
+  border: 2px solid white;
+  border-radius: 8px;
+}
+
+.nav-end a:hover{
+  background-color:#20c0ff;
+  transition-duration: 0.4s;
+}
+
+
 
 /* Search bar styling */
 .search-form{
@@ -39,7 +68,6 @@ h1 {
   border-radius: 10px;
   padding: 5px;
   
-
 }
 .search-container{ /* This contains the search input type and the button */ 
   display: flex;
