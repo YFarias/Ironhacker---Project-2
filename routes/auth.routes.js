@@ -149,6 +149,77 @@ router.post("/login", (req,res) => {
     console.log("Login ativo ") //TEST IF LOGIN IS TRUE 
 });
 
+//Edit Profile
+
+
+router.get("users/edit-profile", (req, res) => {
+    res.render('')
+});
+
+
+//post signup
+
+router.post("/signup", (req, res) => {
+    //get username, email and password from the req.body
+    const { username, password } = req.body;
+
+
+    //Check if these credentials are provided
+    const usernameNotProvided = !username || username === "";
+    const passwordNotProvided = !password || password === "";
+
+    if(usernameNotProvided || passwordNotProvided){
+        res.render("auth/signup", {
+            errorMessage: "Please provide username and password"
+        });
+    }
+
+    //Check the Password Strength
+    
+    const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+    
+    if(!regex.test(password)){
+        res.status(400).render("auth/signup", {
+            errorMessage:
+                //Message that will show when the password doesn't meet the criteria
+                "Password must have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter."
+        })
+    }
+
+
+    //Check if username is taken
+
+    User.findOne({username: username})
+        .then((foundUser) => {
+            if(foundUser){
+                throw new Error("Username is taken.");
+            }
+
+            //Generating salt string
+            return bcrypt.genSalt(saltRounds)
+        })
+
+        .then((salt) => {
+            //Encrypting the password
+            return bcrypt.hash(password, salt);
+        })
+
+        .then((hashedPassword) => {
+            //Create a new user
+            return User.create({username: username,  password: hashedPassword});
+        })
+        .then((createdUser) => {
+            //Redirecting the created user to the homepage
+            res.redirect("/");
+        })
+
+        .catch((err) => {
+            res.render("auth/signup", {errorMessage: err.message || "Error while signing up, try again."})
+        })
+})
+
+    
+
 //logout
 router.get("/logout", isLoggedIn, (req,res) =>{
     req.session.destroy ((err)=> {
@@ -159,6 +230,8 @@ router.get("/logout", isLoggedIn, (req,res) =>{
     });
     
 });
+
+
 
 
 module.exports = router;

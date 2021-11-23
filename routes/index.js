@@ -37,6 +37,9 @@ router.get("/profile", isLoggedIn, (req,res,next) =>{
   
 });
 
+// Get /private Edit-profile view
+
+
 
 
 module.exports = router;
