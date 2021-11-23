@@ -2,13 +2,22 @@ body {
   margin: 0;
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  height: 100vh;
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 
+/* TheGameList logo  */
+.logo{
+  margin-left: 5px;
+  margin-top: 15px;
+}
+
 .nav-container{
   background-color:  #00b7ff;
-  height:110px;
+  height:120px;
 }
 
 
@@ -125,6 +134,7 @@ a {
   line-height: 5px;
   margin-left: 2%;
   
+  
 }
 
 
@@ -150,8 +160,18 @@ a {
   background-color: black;
   bottom: 0;
   width: 100%;
-  height: 20vh;
-  text-align: center;
-
+  height: 100px;
+  display: flex;
+  margin-top: 50px;
+  
   
 }
+
+.text{
+  top: 60px;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+
+}
+
