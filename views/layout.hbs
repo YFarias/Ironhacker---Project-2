@@ -18,6 +18,12 @@
     <a href="/login">Login</a>
     <a href="/signup">Signup</a>
     <a href="/games/add">Add game</a>
+
+<!-- This icons will show up if the user is logged in--> 
+    {{#if userIsLoggedIn}}
+    <a href="/profile">Profile</a>
+    <a href="/logout">Logout</a>
+   {{/if}}
     
   </nav>
 

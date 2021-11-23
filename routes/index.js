@@ -23,9 +23,11 @@ router.get("/", (req, res, next) => {
 const gamesRouter = require('../routes/game.routes');
 
 //Private routes
-// Get /private
-router.get("/secret", isLoggedIn, (req,res,next) =>{
-  res.render("/secret-view");
+
+
+// Get /private profile view
+router.get("/profile", isLoggedIn, (req,res,next) =>{
+  res.render("secret-view");
   
 });
 
