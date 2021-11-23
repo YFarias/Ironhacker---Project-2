@@ -16,7 +16,8 @@ router.get("/", (req, res, next) => {
   } */
   console.log(req.session)
   console.log("Login esta funcionar:", userIsLoggedIn)
-  res.render("index", { userIsLoggedIn: userIsLoggedIn });
+  /* res.render("index", { userIsLoggedIn: userIsLoggedIn }); */
+  res.render("index", {user: req.session.user})
 });
 
 //games routes
