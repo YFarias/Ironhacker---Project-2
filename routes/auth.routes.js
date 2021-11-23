@@ -150,11 +150,6 @@ router.post("/login", (req,res) => {
     console.log("Login ativo ") //TEST IF LOGIN IS TRUE 
 });
 
-//EDIT  
-//GET
-
-
-
 
 //logout
 router.get("/logout", isLoggedIn, (req,res) =>{

@@ -33,6 +33,10 @@ app.use("/", index);
 const authRoutes = require("./routes/auth.routes")
 app.use("/", authRoutes);
 
+const profileRoutes = require("./routes/profile.routes")
+app.use("/", profileRoutes);
+
+
 //GAME Routes
 const gameRoutes = require("./routes/game.routes")
 app.use("/", gameRoutes);
