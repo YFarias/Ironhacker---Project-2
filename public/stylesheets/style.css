@@ -1,12 +1,22 @@
+
+@font-face {
+  font-family: 'cosima';
+  src: url(./assets/cosima.otf);
+}
+
 body {
   margin: 0;
   padding: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'cosima', sans-serif;
+  font-weight: 200;
   min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  background-color:#111111;
+  color: white;
+  
 }
 
 
@@ -14,28 +24,35 @@ body {
 .logo{
   margin-left: 5px;
   margin-top: 15px;
+  
+  
 }
 
 .nav-container{
-  background-color:  #00b7ff;
+
   height:120px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  
 }
 
 
 .nav-wrap{
   display: flex;
+  margin-top: 10px;
 }
 
 
 /* NAV-BAR ON THE LEFT STYLES */
 
 .nav-bar {
-  width: 85%;
+  width: 60%;
   display: flex;
-
+  
+  
 }
 
-a {
+.nav-bar a {
   color: white;
   padding: 20px;
   text-decoration: none;
@@ -49,7 +66,9 @@ a {
 .nav-end{
   display: flex;
   text-align: center;
-  width: 15%;
+  width: 10%;
+  flex-direction: row;
+  
   
 }
 
@@ -57,14 +76,17 @@ a {
   color: white;
   height: 20px;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-right: 15px;
   border: 2px solid white;
   border-radius: 8px;
+  text-decoration: none;
+  font-size: 1em;
 }
 
 .nav-end a:hover{
-  background-color:#20c0ff;
+  background-color:black;
+  color: rgb(194, 64, 49);
   transition-duration: 0.4s;
 }
 
@@ -74,34 +96,39 @@ a {
 .search-form{
   width: 100%;
   display: flex;
-  margin-left: 15px;
+  height: 35px;
   border-radius: 10px;
-  padding: 5px;
+  padding: 15px;
+  
+  
   
 }
 .search-container{ /* This contains the search input type and the button */ 
   display: flex;
   flex-direction: row;
+  margin-right: 2%;
+  width: 15%;
+  margin-left: 100px;
   
 }
 
 .search-bar{
-  width: 30%;
+  width: 80%;
   display: flex;
-  border-radius: 10px;
   padding: 5px;
+  
   
 }
 
 .search-btn{
-  border-radius: 5px;
-  background-color: #00a6e7;
+  background-color: rgb(194, 64, 49);
   color: white;
+  
 }
 
 /* Style for the game list */
 .container{
-  
+  text-transform: uppercase;
   display: flex;
   flex-direction: row;
   width: 80%;
@@ -110,26 +137,37 @@ a {
   text-align: center;
   justify-content: center;
   
+  
 }
 
 .box{
- 
+  
   margin: 10px;
   padding: 8px;
   width: 200px;
   height: auto;
-  border: 2px solid black;;
+  border: 2px solid black;
+  background-color:#292929;
+  color: white;
 }
 
 /* index container */
 
 .index-container{
+  
   width: 60%;
   display: flex;
   flex-direction: column;
   text-align: center;
   margin: auto;
+  color: rgb(175, 175, 175);
+  margin-top: 5%;
+  margin-bottom: 10%;
   
+}
+
+.index-container h1{
+  color:rgb(194, 64, 49);
 }
 
 .index-container h3{
@@ -147,7 +185,7 @@ a {
 
 .btn{
   color: white;
-  background-color:#00b7ff;
+  background-color:rgb(194, 64, 49);
   width: 50px;
   padding: 8px;
   border-radius: 2px;
@@ -155,6 +193,7 @@ a {
   text-align: center;
   margin: auto;
   margin-top: 0;
+  text-decoration: none;
 }
 
 .title{
@@ -193,7 +232,7 @@ a {
 
 .footer{
   color: white;
-  background-color: black;
+  background-color:  #292929;
   bottom: 0;
   width: 100%;
   height: 100px;
