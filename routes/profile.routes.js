@@ -1,3 +1,9 @@
+const router = require("express").Router();
+const isLoggedIn = require("./../middleware/isLoggedIn"); //imported this to have the logged in session
+
+
+
+
 
 // Get /private profile view
 router.get("/profile", isLoggedIn, (req,res,next) =>{
@@ -10,3 +16,7 @@ router.get("/profile", isLoggedIn, (req,res,next) =>{
     res.render("profile", { userIsLoggedIn: userIsLoggedIn });
     
   });
+
+
+  //EDIT PROFILE
+  module.exports = router;
