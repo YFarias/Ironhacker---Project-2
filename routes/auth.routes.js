@@ -1,5 +1,3 @@
- const { get } = require("mongoose"); //what is this? - F
-
 const router = require("express").Router()
 const User = require("./../models/User.model");
 const Game = require("./../models/Game.model");
