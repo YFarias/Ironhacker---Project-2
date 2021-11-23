@@ -70,7 +70,7 @@ h1 {
   margin: auto;
   flex-wrap: wrap;
   text-align: center;
-  
+  justify-content: center;
   
 }
 

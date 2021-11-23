@@ -33,17 +33,16 @@ router.get("/signup", (req, res) => {
 
 router.post("/signup", (req, res) => {
     //get username, email and password from the req.body
-    const { username, email, password } = req.body;
+    const { username, password } = req.body;
 
 
     //Check if these credentials are provided
     const usernameNotProvided = !username || username === "";
-    const emailNotProvided = !email || email === "";
     const passwordNotProvided = !password || password === "";
 
-    if(usernameNotProvided || emailNotProvided || passwordNotProvided){
+    if(usernameNotProvided || passwordNotProvided){
         res.render("auth/signup", {
-            errorMessage: "Please provide username, email and password"
+            errorMessage: "Please provide username and password"
         });
     }
 
@@ -79,7 +78,7 @@ router.post("/signup", (req, res) => {
 
         .then((hashedPassword) => {
             //Create a new user
-            return User.create({username: username, email: email, password: hashedPassword});
+            return User.create({username: username,  password: hashedPassword});
         })
         .then((createdUser) => {
             //Redirecting the created user to the homepage
@@ -90,6 +89,9 @@ router.post("/signup", (req, res) => {
             res.render("auth/signup", {errorMessage: err.message || "Error while signing up, try again."})
         })
 })
+
+
+
 
 
 //Login
