@@ -1,9 +1,18 @@
+
+<link rel="stylesheet" href="/stylesheets/profile-style.css" />
+
+
+
+<div class="container">
+
+
 <h1>My profile</h1>
+<img src="https://tinyurl.com/96bb7ks" alt="profile-picture" class="profile-picture">
 
-
-<h1>Welcome {{user.username}}</h1>
+<h2>Welcome {{user.username}}</h2>
 
 <br>
-<form action="/edit" method="GET">
-    <button><a>Edit</a></button>
-</form>
+    <form action="/edit" method="GET">
+        <button class="edit-btn"><a>Edit</a></button>
+    </form>
+</div>

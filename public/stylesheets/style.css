@@ -5,19 +5,21 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 0 100px;
   padding: 0;
   font-family: 'cosima', sans-serif;
   font-weight: 200;
-  min-height: 100vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   background-color:#111111;
   color: white;
+  position: relative;
+  height: 80vh;
   
 }
+
 
 
 /* TheGameList logo  */
@@ -84,16 +86,16 @@ body {
   padding: 10px;
   margin-top: 10px;
   margin-right: 15px;
-  border: 2px solid white;
+  border: 2px solid rgb(194, 64, 49);
   border-radius: 8px;
   text-decoration: none;
   font-size: 1em;
 }
 
 .nav-end a:hover{
-  background-color:black;
-  color: rgb(194, 64, 49);
-  transition-duration: 0.4s;
+  background-color:rgb(194, 64, 49);
+  color: white;
+  transition-duration: 0.6s;
 }
 
 
@@ -233,6 +235,8 @@ body {
   text-align: center;
   line-height: 5px;
   margin-left: 2%;
+ 
+  
   
   
 }
@@ -245,55 +249,89 @@ body {
 } 
 
 /* Stylling for the authentication forms */
+
+
+
 .auth-form{
   
   margin: auto;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
-  width: 30%;
+  margin-top: 100px;
+  width: 28%;
+  background-color:#1d1c1c;
+  border-radius: 20px;
+  margin-bottom: 150px;
+  height: auto;
+  
+  
+  
 }
 
+.form-container{
+  background-color:#1d1c1c;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  
+}
 .auth-form h1{
   text-align: center;
-  margin-bottom: 15%;
+  margin-bottom: 30px;
+  color:rgb(194, 64, 49);
+  -webkit-text-stroke: 1px black;
+ 
+}
+
+/* This is a h3 from the add game page */
+.auth-form h3{
+  text-align: center;
 }
 
 .auth-form input{
   width: 40%;
   border-radius: 8px;
-  padding: 4px;
   margin: auto;
   border: 3px solid rgb(194, 64, 49);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 3px;
+  
 }
 
 .auth-form label{
   margin: auto;
-  margin-bottom: 3%;
+  margin-bottom: 0px;
+  padding: 0;
   text-transform: capitalize;
   font-size: 1.2em;
+ 
+  
 }
 
 .submit-btn{
   background-color: rgb(194, 64, 49);
   color: white;
-  width: 20%;
+  width: 25%;
   height: 40px;
-  border-radius: 8px;
+  border-radius: 10px;
+  border-style:hidden;
   padding: 8px;
   margin: auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  
 }
 
-.login-btn{
-  background-color: rgb(194, 64, 49);
-  color: white;
-  width: 20%;
-  height: 40px;
-  border-radius: 8px;
-  padding: 8px;
-  margin: auto;
+.submit-btn:hover{
+  background-color: #292929;
+  transition-duration: 0.5s;
+  border: 1px solid rgb(194, 64, 49);
 }
+
+
 
 .footer{
   color: white;
@@ -303,6 +341,7 @@ body {
   height: 100px;
   display: flex;
   margin-top: 50px;
+  
   
   
 }
@@ -315,3 +354,10 @@ body {
 
 }
 
+
+.socials{
+  color: white;
+  text-decoration: none;
+  height: 20px;
+  filter: invert(100%)
+}

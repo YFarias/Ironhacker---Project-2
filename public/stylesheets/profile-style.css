@@ -1,0 +1,45 @@
+/* Styles for the profile view */
+
+.container{
+    background-color: #292929;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    text-transform: capitalize;
+    border-radius: 4px;
+    margin-bottom: 150px;
+}
+
+
+.profile-picture{
+    background-color: #292929;
+    height: 180px;
+    width: 20%;
+    margin: auto;
+    border-radius: 50%;
+    border-radius: 1px solid crimson;
+    font-size: 0.6em;
+    filter:grayscale(); /* setting the picture in shades of gray */
+}
+
+
+
+
+.edit-btn{
+    background-color: rgb(194, 64, 49);
+    width: 20%;
+    padding: 8px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+    border-style: hidden;
+    color: white;
+    text-transform: uppercase;
+    
+}
+
+.edit-btn:hover{
+    background-color:  #111111;
+    color:white;
+    transition-duration: 0.4s;
+}

@@ -24,20 +24,23 @@
 
 
 <!-- This is the signup form -->
+
 <form id="form" action="/signup" method="POST" class="auth-form">
+<div class="form-container">
 <h1>Start your journey</h1>
 
   <label for="username">Username</label>
   <input type="text" name="username" placeholder="Your username" />
+  
   <br>
 
-  <label for="password">Password</label>
+  <label for="password">Password </label>
   <input type="password" name="password" placeholder="Your password"/>
-    <br>
+  
 
   <button type="submit" class="submit-btn">Sign up</button>
+</div>
 </form>
-
 
 {{#if errorMessage}}
   <div class="error-message">{{errorMessage}}</div>
