@@ -150,15 +150,45 @@ body {
 
 .box{
   
-  margin: 10px;
-  padding: 8px;
+  margin: 15px;
+  padding: 18px;
   width: 200px;
   height: auto;
-  border: 2px solid black;
+  border: 2px solid rgb(194, 64, 49);
   background-color:#292929;
   color: white;
+  text-transform: capitalize;
 }
 
+.title{
+  text-align: center;
+  margin-top: 4%;
+}
+
+/* .game-container{
+  width: 15%;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  text-align: center;
+  line-height: 5px;
+  margin-left: 2%;
+  
+} */
+
+
+.game-img{
+ height: 15vh;
+  border: 2px solid black;
+  border-radius: 5px;
+  filter:grayscale()
+} 
+
+
+
+.bold{
+  color:rgb(194, 64, 49);
+  padding-right: 4px;
+}
 /* index container */
 
 .index-container{
@@ -223,31 +253,6 @@ body {
   text-decoration: none;
 }
 
-.title{
-  text-align: center;
-  margin-top: 4%;
-}
-
-.game-container{
-  width: 15%;
-  border: 1px solid black;
-  margin-bottom: 10px;
-  text-align: center;
-  line-height: 5px;
-  margin-left: 2%;
- 
-  
-  
-  
-}
-
-
-.game-img{
- height: 15vh;
-  border: 2px solid black;
-  border-radius: 50%;
-} 
-
 /* Stylling for the authentication forms */
 
 
@@ -263,7 +268,7 @@ body {
   border-radius: 20px;
   margin-bottom: 150px;
   height: auto;
-  
+  box-shadow: 0 5px 15px rgb(194, 64, 49, 0.7);
   
   
 }

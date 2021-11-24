@@ -5,17 +5,18 @@
     color: white;
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 40%;
     text-transform: capitalize;
     border-radius: 4px;
     margin-bottom: 150px;
+    box-shadow: 0 5px 15px rgb(194, 64, 49, 0.7);
 }
 
 
 .profile-picture{
     background-color: #292929;
     height: 180px;
-    width: 20%;
+    width: 30%;
     margin: auto;
     border-radius: 50%;
     border-radius: 1px solid crimson;
