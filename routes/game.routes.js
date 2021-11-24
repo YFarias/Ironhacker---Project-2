@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-
+const isLoggedIn = require("./../middleware/isLoggedIn");
 const User = require("../models/User.model");
 const Game = require("../models/Game.model");
 
@@ -41,7 +41,7 @@ router.get("/games", (req, res) => {
 
 //Adding a game to the library
 
-router.get("/games/add", (req, res) => {
+router.get("/games/add", isLoggedIn,  (req, res) => {
   res.render("games/addgame", {user: req.session.user});
 })
 

@@ -290,15 +290,22 @@ body {
 }
 
 .auth-form input{
-  width: 40%;
-  border-radius: 8px;
+  width: 45%;
+  border-radius: 5px;
   margin: auto;
   border: 3px solid rgb(194, 64, 49);
   margin-bottom: 10px;
   margin-top: 10px;
-  padding: 3px;
+  padding: 4px;
   
 }
+
+.auth-form ::placeholder{
+  
+  text-align: center;
+}
+
+/* label was deleted but style might be used later.
 
 .auth-form label{
   margin: auto;
@@ -308,7 +315,7 @@ body {
   font-size: 1.2em;
  
   
-}
+} */
 
 .submit-btn{
   background-color: rgb(194, 64, 49);
