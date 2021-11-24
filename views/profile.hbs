@@ -17,9 +17,12 @@
 <div class="favourites">
     <h3>My Games</h3>
     {{#each user.favoriteGames}}
-    <ul>
-        <li>{{title}}, {{category}}</li>
-    </ul>
+    
+        <p>{{title}}, {{category}}</p>
+        <form action="/games/{{_id}}/delete" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+   <br/>
     {{/each}}
 </div>
     <form action="/edit" method="GET">
