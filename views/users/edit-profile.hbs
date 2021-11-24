@@ -1,4 +1,4 @@
-<form id="form" action="/edit" method="POST" class="">
+<form id="form" action="/edit" method="POST" class="" enctype="multipart/form-data">
 <h1>Edit profile</h1>
 
 
@@ -8,13 +8,10 @@
 </label>
     <br>
   
-  
-  
   <label for="username">Username</label>
   <input type="text" name="username" value="{{user.username}}" />
   <br>
 
-  
 
   <button type="submit">Submit</button>
 </form>

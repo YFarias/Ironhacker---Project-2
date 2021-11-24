@@ -37,16 +37,18 @@ router.get("/profile", isLoggedIn, async (req,res,next) =>{
     const {username,profilePicture} = req.body
 
     let imgURL;
+    console.log("req.file", req.file)
     if (req.file) { // req.file is the profile picture
         imgURL = req.file.path
     } else {
         imgURL = profilePicture
     }
    
-    User.findByIdAndUpdate(userID, {username: username, imgURL:imgURL}, {new: true})
+    User.findByIdAndUpdate(userID, {username: username, profilePicture:imgURL}, {new: true})
     .then((data) => {
         console.log('data :', data)
-    res.redirect("/profile")})
+        res.redirect("/profile")
+    })
     .catch((error) => console.log(error));
 });
             
