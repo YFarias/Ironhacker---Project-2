@@ -15,7 +15,7 @@ const userSchema = new Schema(
     },
 
     
-    favoriteGames : {type: Schema.Types.ObjectId,  ref: 'Game'},
+    favoriteGames :[ {type: Schema.Types.ObjectId,  ref: 'Game'} ],
   },
 
   /* {

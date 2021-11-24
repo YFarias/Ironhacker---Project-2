@@ -13,6 +13,15 @@
 <h2>Welcome {{user.username}}</h2>
 
 <br>
+
+<div class="favourites">
+    <h3>My Games</h3>
+    {{#each user.favoriteGames}}
+    <ul>
+        <li>{{title}}, {{category}}</li>
+    </ul>
+    {{/each}}
+</div>
     <form action="/edit" method="GET">
         <button class="edit-btn"><a>Edit</a></button>
     </form>

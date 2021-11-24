@@ -16,7 +16,7 @@ router.get("/profile", isLoggedIn, async (req,res,next) =>{
     }
     const userID = req.session.user._id
     console.log('userID :', userID)
-    const user = await User.findById(userID)
+    const user = await User.findById(userID).populate('favoriteGames');
     res.render("profile", { userIsLoggedIn: userIsLoggedIn, user });
     
   });
