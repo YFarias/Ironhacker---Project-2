@@ -3,6 +3,9 @@ const isLoggedIn = require("./../middleware/isLoggedIn"); //imported this to hav
 const User = require("./../models/User.model");
 
 
+//cloudinary import <---fileuploader--->
+const fileuploader = require("../config/cloudinary.config");
+
 // Get /private profile view
 router.get("/profile", isLoggedIn, async (req,res,next) =>{
 
@@ -27,13 +30,20 @@ router.get("/profile", isLoggedIn, async (req,res,next) =>{
 
   });
 
-  router.post("/edit", (req,res)=> {
+  router.post("/edit", fileuploader.single("profile-picture"), (req,res) => {
    
     const userID = req.session.user._id
     
-    const {username,password} = req.body
+    const {username,profilePicture} = req.body
+
+    let imgURL;
+    if (req.file) { // req.file is the profile picture
+        imgURL = req.file.path
+    } else {
+        imgURL = profilePicture
+    }
    
-    User.findByIdAndUpdate(userID, {username: username,password:password} )
+    User.findByIdAndUpdate(userID, {username: username, imgURL:imgURL}, {new: true})
     .then((data) => {
         console.log('data :', data)
     res.redirect("/profile")})

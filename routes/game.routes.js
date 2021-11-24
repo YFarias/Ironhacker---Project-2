@@ -5,6 +5,9 @@ const User = require("../models/User.model");
 const Game = require("../models/Game.model");
 
 
+//cloudinary import <---fileuploader--->
+const fileuploader = require("../config/cloudinary.config")
+
 //Game Routes
 
 
