@@ -86,13 +86,15 @@ router.get("/games/:gameId/favorites", (req, res) => {
 
 router.post("/games/:gameId/delete", (req, res) => {
   const userId = req.session.user._id;
-  const gameId = req.params.gameId
+  const gameId = req.params.gameId;
 
-  console.log("delete userId", userId)
-  User.findByIdAndDelete(gameId)
-  
-  .then((status) => {
-      res.redirect("/profile")
+  User.findByIdAndUpdate(userId, {
+    $pull: {
+      favoriteGames: gameId 
+    }
+  }, {new:true})
+    .then((user) => {
+     res.redirect("/profile")
     })
     .catch((err) => console.log(err))
 })
