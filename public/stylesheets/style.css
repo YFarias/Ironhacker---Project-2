@@ -20,6 +20,10 @@ body {
   
 }
 
+.main-body{
+  height: 100%; /* This will force the footer to be down even without content*/
+  
+}
 
 
 /* TheGameList logo  */
@@ -287,7 +291,7 @@ body {
   text-align: center;
   margin-bottom: 30px;
   color:rgb(194, 64, 49);
-  -webkit-text-stroke: 1px black;
+ 
  
 }
 
@@ -345,6 +349,105 @@ body {
   border: 1px solid rgb(194, 64, 49);
 }
 
+
+/* Styling for add form */
+.add-game-wrap{
+  
+  width: 80%;
+  margin: auto;
+}
+
+
+.add-game-title{
+  text-align: center;
+  margin-bottom: 0;
+}
+
+
+.add-game-title h3{
+  font-size: 2.2em;
+  color:rgb(194, 64, 49);
+  text-transform: uppercase;
+}
+
+.add-game-form{
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  margin-top: 70px;
+  border-radius: 20px;
+  margin-bottom: 150px;
+  height: auto;
+  box-shadow: 0 5px 15px rgb(194, 64, 49, 0.7);
+  padding: 30px;
+
+}
+
+.boxes{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  margin: auto;
+  width: 100%;
+  align-items: center;
+  text-align: justify;
+  
+}
+
+
+.add-game-form select{
+  background-color: #292929;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgb(194, 64, 49, 0.7);
+  box-shadow: 0 2px 2px rgb(194, 64, 49, 0.7);
+  width: 70%;
+  padding: 3px;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+
+.add-game-form input{
+  background-color: #292929;
+  color:rgba(255, 255, 255);
+  padding: 3px;
+  margin-top: 16px;
+  border-radius: 4px;
+  border: 1px solid rgb(194, 64, 49, 0.7);
+  box-shadow: 0 2px 2px rgb(194, 64, 49, 0.7);
+
+}
+
+.add-game-form ::placeholder{
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.add-game-box{
+  margin: auto;
+  width: 100%;
+  margin: 10px;
+}
+
+.add-game-btn{
+  background-color: rgb(194, 64, 49);
+  color: white;
+  width: 55%;
+  height: 40px;
+  border-radius: 10px;
+  border-style:hidden;
+  padding: 8px;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.add-game-btn:hover{
+  background-color: #292929;
+  transition-duration: 0.5s;
+  border: 1px solid rgb(194, 64, 49)
+
+
+}
 
 
 .footer{
