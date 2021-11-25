@@ -51,13 +51,8 @@ router.get("/profile", isLoggedIn, async (req,res,next) =>{
     })
     .catch((error) => console.log(error));
 });
-            
-            
-            //DELETE 
-   
-    /* get the new info from the body
-      find user and update
-      redirect to user profile
-   */
+
+
+
 
   module.exports = router;
