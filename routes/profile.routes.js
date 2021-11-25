@@ -54,21 +54,10 @@ router.get("/profile", isLoggedIn, async (req,res,next) =>{
             
             
             //DELETE 
-
-        
-
-
-
-   
    
     /* get the new info from the body
       find user and update
       redirect to user profile
    */
-
-
-
-
-
 
   module.exports = router;

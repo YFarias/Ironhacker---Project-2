@@ -221,7 +221,7 @@ body {
 }
 .index-container h1{
   color:rgb(194, 64, 49);
-  -webkit-text-stroke: 1px black;
+  /* -webkit-text-stroke: 1px black; */
   font-size: 4.5em;
   
 }
