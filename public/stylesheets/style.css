@@ -261,7 +261,13 @@ body {
 
 /* Stylling for the authentication forms */
 
-
+.error-message{
+  color:white;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 0px;
+  font-size: 0.9em;
+}
 
 .auth-form{
   

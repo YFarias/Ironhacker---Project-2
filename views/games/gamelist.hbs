@@ -7,7 +7,7 @@
 <div class="container">
 {{#each gameList}}
   <div class="box">
-    <img src="https://tinyurl.com/96bb7ks" alt="game-cover" class="game-img">
+    <p><b class="bold">Image:</b><img src={{image}} alt="game-cover" class="game-img"></p>
     <p><b class="bold">Title:</b> {{title}}</p>
     <p><b class="bold">Category:</b> {{category}}</p>
 
@@ -17,7 +17,7 @@
 
     </form>
 
-    <a href="/blablabal">Where to play</a>
+    <a href="{{url}}">Where to play</a>
   </div>
   {{/each}}
 </div>

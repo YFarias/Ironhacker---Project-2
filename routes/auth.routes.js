@@ -49,13 +49,13 @@ router.post("/signup", (req, res) => {
 
     //Check the Password Strength
     
-    const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+    const regex = /(?=.*\d).{6,}/;
     
     if(!regex.test(password)){
         res.status(400).render("auth/signup", {
             errorMessage:
                 //Message that will show when the password doesn't meet the criteria
-                "Password must have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter."
+                "Password must have at least 6 chars and must contain at least one number."
         })
     }
 

@@ -7,7 +7,7 @@
   <h3>Add a new game</h3>
   </div>
 
-  <form action="/games/add" method="POST" class="add-game-form">
+  <form action="/games/add" method="POST" class="add-game-form" enctype="multipart/form-data">
 
   <div class="boxes">
   <div class="add-game-box">
@@ -37,10 +37,16 @@
   </select>
   </div>
 
+  <div class="add-game-box">
+    <label for="picture"><h3>Image</h3>
+    <div class="imgProfile">
+      <input type="file" name="image" />
+    </div>
+
 
      <button type="submit"class="add-game-btn">Create Game</button>
 
-     </div>
+  </div>
 </form>
 
 </div>
