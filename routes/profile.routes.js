@@ -3,6 +3,9 @@ const isLoggedIn = require("./../middleware/isLoggedIn"); //imported this to hav
 const User = require("./../models/User.model");
 
 
+//cloudinary import <---fileuploader--->
+const fileuploader = require("../config/cloudinary.config");
+
 // Get /private profile view
 router.get("/profile", isLoggedIn, async (req,res,next) =>{
 
@@ -13,7 +16,7 @@ router.get("/profile", isLoggedIn, async (req,res,next) =>{
     }
     const userID = req.session.user._id
     console.log('userID :', userID)
-    const user = await User.findById(userID)
+    const user = await User.findById(userID).populate('favoriteGames');
     res.render("profile", { userIsLoggedIn: userIsLoggedIn, user });
     
   });
@@ -39,15 +42,7 @@ router.get("/profile", isLoggedIn, async (req,res,next) =>{
     res.redirect("/profile")})
     .catch((error) => console.log(error));
 });
-            
-            
-            
-        
-
-
-
-   
-   
+      
     /* get the new info from the body
       find user and update
       redirect to user profile

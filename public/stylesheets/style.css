@@ -1,46 +1,73 @@
+
+@font-face {
+  font-family: 'cosima';
+  src: url(./assets/cosima.otf);
+}
+
 body {
-  margin: 0;
+  margin: 0 0 100px;
   padding: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  min-height: 100vh;
+  font-family: 'cosima', sans-serif;
+  font-weight: 200;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  background-color:#111111;
+  color: white;
+  position: relative;
+  height: 80vh;
+  
 }
+
 
 
 /* TheGameList logo  */
 .logo{
   margin-left: 5px;
   margin-top: 15px;
+  
+  
 }
 
 .nav-container{
-  background-color:  #00b7ff;
+
   height:120px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  
 }
 
 
 .nav-wrap{
   display: flex;
+  margin-top: 10px;
+/*   background-color: rgb(194, 64, 49); */
+  margin-top: 0;
 }
 
 
 /* NAV-BAR ON THE LEFT STYLES */
 
 .nav-bar {
-  width: 85%;
+  width: 60%;
   display: flex;
-
+  
+  
 }
 
-a {
+.nav-bar a {
   color: white;
   padding: 20px;
   text-decoration: none;
   padding-left: 20px;
   
+}
+
+/* Hover effect on the left nav bar */
+.nav-bar a:hover{
+  color: rgb(194, 64, 49);
+  transition-duration: 0.4s;
 }
 
 
@@ -49,7 +76,9 @@ a {
 .nav-end{
   display: flex;
   text-align: center;
-  width: 15%;
+  width: 10%;
+  flex-direction: row;
+  
   
 }
 
@@ -57,15 +86,18 @@ a {
   color: white;
   height: 20px;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-right: 15px;
-  border: 2px solid white;
+  border: 2px solid rgb(194, 64, 49);
   border-radius: 8px;
+  text-decoration: none;
+  font-size: 1em;
 }
 
 .nav-end a:hover{
-  background-color:#20c0ff;
-  transition-duration: 0.4s;
+  background-color:rgb(194, 64, 49);
+  color: white;
+  transition-duration: 0.6s;
 }
 
 
@@ -74,34 +106,39 @@ a {
 .search-form{
   width: 100%;
   display: flex;
-  margin-left: 15px;
+  height: 35px;
   border-radius: 10px;
-  padding: 5px;
+  padding: 15px;
+  
+  
   
 }
 .search-container{ /* This contains the search input type and the button */ 
   display: flex;
   flex-direction: row;
+  margin-right: 2%;
+  width: 15%;
+  margin-left: 100px;
   
 }
 
 .search-bar{
-  width: 30%;
+  width: 80%;
   display: flex;
-  border-radius: 10px;
   padding: 5px;
+  
   
 }
 
 .search-btn{
-  border-radius: 5px;
-  background-color: #00a6e7;
+  background-color: rgb(194, 64, 49);
   color: white;
+  
 }
 
 /* Style for the game list */
 .container{
-  
+  text-transform: uppercase;
   display: flex;
   flex-direction: row;
   width: 80%;
@@ -110,51 +147,19 @@ a {
   text-align: center;
   justify-content: center;
   
-}
-
-.box{
- 
-  margin: 10px;
-  padding: 8px;
-  width: 200px;
-  height: auto;
-  border: 2px solid black;;
-}
-
-/* index container */
-
-.index-container{
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin: auto;
   
 }
 
-.index-container h3{
-  width: 70%;
-  margin: auto;
-  font-size: 2em;
-  margin-bottom: 50px;
-}
-
-.index-container h5{
-  font-size: 1.8em;
-  margin-bottom: 10px;
-
-}
-
-.btn{
+.box{
+  
+  margin: 15px;
+  padding: 18px;
+  width: 200px;
+  height: auto;
+  border: 2px solid rgb(194, 64, 49);
+  background-color:#292929;
   color: white;
-  background-color:#00b7ff;
-  width: 50px;
-  padding: 8px;
-  border-radius: 2px;
-  font-size: 1em;
-  text-align: center;
-  margin: auto;
-  margin-top: 0;
+  text-transform: capitalize;
 }
 
 .title{
@@ -162,7 +167,7 @@ a {
   margin-top: 4%;
 }
 
-.game-container{
+/* .game-container{
   width: 15%;
   border: 1px solid black;
   margin-bottom: 10px;
@@ -170,35 +175,187 @@ a {
   line-height: 5px;
   margin-left: 2%;
   
-  
-}
+} */
 
 
 .game-img{
  height: 15vh;
   border: 2px solid black;
-  border-radius: 50%;
+  border-radius: 5px;
+  filter:grayscale()
 } 
 
+
+
+.bold{
+  color:rgb(194, 64, 49);
+  padding-right: 4px;
+}
+/* index container */
+
+.index-container{
+  
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  color: white;
+  margin-top: -3.5%;
+  margin-bottom: 10%;
+  
+}
+
+.index-text{
+  
+  z-index: 2;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin-top: 10%;
+  position: absolute;
+  width: 100%;
+  
+}
+.index-container h1{
+  color:rgb(194, 64, 49);
+  -webkit-text-stroke: 1px black;
+  font-size: 4.5em;
+  
+}
+
+.index-container h3{
+  font-size: 2em;
+  margin-bottom: 50px;
+  width: 60%;
+  margin: auto;
+  
+}
+
+
+.index-bg{
+  width: 100%;
+  position: relative;
+  opacity: 0.5;
+}
+
+
+.btn{
+  color: white;
+  background-color:rgb(194, 64, 49);
+  width: 50px;
+  padding: 8px;
+  border-radius: 2px;
+  font-size: 1em;
+  text-align: center;
+  margin: auto;
+  margin-top: 0;
+  text-decoration: none;
+}
+
 /* Stylling for the authentication forms */
+
+
+
 .auth-form{
   
   margin: auto;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
-  width: 30%;
+  margin-top: 100px;
+  width: 28%;
+  background-color:#1d1c1c;
+  border-radius: 20px;
+  margin-bottom: 150px;
+  height: auto;
+  box-shadow: 0 5px 15px rgb(194, 64, 49, 0.7);
+  
+  
 }
+
+.form-container{
+  background-color:#1d1c1c;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+  
+}
+.auth-form h1{
+  text-align: center;
+  margin-bottom: 30px;
+  color:rgb(194, 64, 49);
+  -webkit-text-stroke: 1px black;
+ 
+}
+
+/* This is a h3 from the add game page */
+.auth-form h3{
+  text-align: center;
+}
+
+.auth-form input{
+  width: 45%;
+  border-radius: 5px;
+  margin: auto;
+  border: 3px solid rgb(194, 64, 49);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding: 4px;
+  
+}
+
+.auth-form ::placeholder{
+  
+  text-align: center;
+}
+
+/* label was deleted but style might be used later.
+
+.auth-form label{
+  margin: auto;
+  margin-bottom: 0px;
+  padding: 0;
+  text-transform: capitalize;
+  font-size: 1.2em;
+ 
+  
+} */
+
+.submit-btn{
+  background-color: rgb(194, 64, 49);
+  color: white;
+  width: 25%;
+  height: 40px;
+  border-radius: 10px;
+  border-style:hidden;
+  padding: 8px;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  text-transform: uppercase;
+  
+}
+
+.submit-btn:hover{
+  background-color: #292929;
+  transition-duration: 0.5s;
+  border: 1px solid rgb(194, 64, 49);
+}
+
 
 
 .footer{
   color: white;
-  background-color: black;
+  background-color:  #292929;
   bottom: 0;
   width: 100%;
   height: 100px;
   display: flex;
   margin-top: 50px;
+  
   
   
 }
@@ -211,3 +368,10 @@ a {
 
 }
 
+
+.socials{
+  color: white;
+  text-decoration: none;
+  height: 20px;
+  filter: invert(100%)
+}

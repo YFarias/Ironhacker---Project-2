@@ -6,35 +6,44 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
+
+  <!-- imported font-->
+  <link href="http://fonts.cdnfonts.com/css/cosima" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/sweet-sans-pro" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/casual-softcore" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/polka-b" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/kreon-2" rel="stylesheet">
+                          
+                
 </head>
 <body>
+  <div class="flex-wrap">
 
 
   {{!-- Nav bar with the options  --}}
+  <div class="header">
   <div class="nav-container"> <!-- Contains the nav-bar and the search-bar--> 
-  <div class="nav-wrap"> <!-- contains both nav-bars-->
-    <nav class="nav-bar">
-      <h1 class="logo"><a href="/">TheGameList</a></h1> <!-- To be determined--> 
-      <a href="/">Home</a>
-      <a href="/games">Games</a>
-      <a href="/games/add">Add game</a>
+    <div class="nav-wrap"> <!-- contains both nav-bars-->
+      <nav class="nav-bar">
+          <!-- If logged in, this will show--> 
+          {{#if user}} 
 
-      <!-- To do: Make these disappear when logged in--> 
-      <a href="/login">Login</a>
-      <a href="/signup">Signup</a>
+              <h1 class="logo"><a href="/">TheGameList</a></h1> <!-- To be determined--> 
+              <a href="/">Home</a>
+              <a href="/games">Games</a>
+              <a href="/games/add">Add game</a>
 
+          {{else}}
+          <!-- If the user is not logged these will show --> 
+              <h1 class="logo"><a href="/">TheGameList</a></h1> <!-- To be determined--> 
+              <a href="/">Home</a>
+              <a href="/games">Games</a>
+              <a href="/login">Login</a>
+              <a href="/signup">Signup</a>
+              
+          {{/if}}
     </nav>
 
-    <nav class="nav-end">
-    <!-- This icons will show up if the user is logged in--> 
-      {{#if user}}
-      <a href="/profile" >Profile</a>
-      <a href="/logout">Logout</a>
-     {{/if}}
-
-    </nav>
-  </div>
-  
     <!-- container for the searchbar -->
     <div class="search-container">
       <form action="/search" method="GET" class="search-form">
@@ -42,15 +51,28 @@
         <button type="submit" class="search-btn">Search</button>
       </form>
     </div>
-  </div>
-  {{{body}}}
+  
+      <nav class="nav-end">
+      <!-- This icons will show up if the user is logged in--> 
+        {{#if user}}
+        <a href="/profile" >Profile</a>
+        <a href="/logout">Logout</a>
+       {{/if}}
 
+      </nav>
+    </div>
+  </div>
+</div>  
+<div class="main-body">
+  {{{body}}}
+</div>
   <div class="footer">
     <div class="text">
       <p>Developed by team FY - Fabio & Yuri</p>
+      <a href="https://github.com/YFarias/Ironhacker---Project-2" ><img src="./../images/github-logo.png" alt="github-logo" class="socials"></a>
     </div>
   </div>
-
+</div>
    <script src="/js/script.js"></script>
    
 
