@@ -30,25 +30,27 @@ router.get("/profile", isLoggedIn, async (req,res,next) =>{
 
   });
 
-  router.post("/edit", (req,res)=> {
+  router.post("/edit", fileuploader.single("profile-picture"), (req,res) => {
    
     const userID = req.session.user._id
     
-    const {username,password} = req.body
+    const {username,profilePicture} = req.body
+
+    let imgURL;
+    console.log("req.file", req.file)
+    if (req.file) { // req.file is the profile picture
+        imgURL = req.file.path
+    } else {
+        imgURL = profilePicture
+    }
    
-    User.findByIdAndUpdate(userID, {username: username,password:password} )
+    User.findByIdAndUpdate(userID, {username: username, profilePicture:imgURL}, {new: true})
     .then((data) => {
         console.log('data :', data)
-    res.redirect("/profile")})
+        res.redirect("/profile")
+    })
     .catch((error) => console.log(error));
 });
-      
-    /* get the new info from the body
-      find user and update
-      redirect to user profile
-   */
-
-
 
 
 
