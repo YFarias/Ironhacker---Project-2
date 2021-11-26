@@ -6,6 +6,26 @@
   src: url(./assets/cosima.otf);
 }
 
+/* Media screens - mobile/ipad responsive - Work in progress */
+@media screen and (max-width: 600px) {
+  body{
+    font-size: 0.4em;
+  }
+
+
+}
+
+@media screen and (max-width: 540px) {
+  body{
+    font-size: 0.4em;
+  }
+
+}
+
+
+
+
+
 body {
   margin: 0 0 100px;
   padding: 0;
@@ -44,9 +64,11 @@ body {
   display: flex;
   margin-top: 10px;
   /* background-color: rgb(194, 64, 49);  */
+  overflow: hidden;
  
   
 }
+
 
 
 /* NAV-BAR ON THE LEFT STYLES */
@@ -187,7 +209,10 @@ body {
 .search-bar{
   background-color: transparent;
   border: hidden;
+  color: white;
+  padding-left:2px;
 }
+
 
 .search-btn{
   background-color: transparent;
@@ -576,12 +601,18 @@ body {
   
 }
 
+.upload-profile-img{
+  filter:invert();
+  cursor: pointer;
+  
+}
+
 .upload {
   margin-top: 5px;
   height: 50px;
 }
 
-input[type="file"] {
+.img-profile input[type="file"] {
   display: none;
 }
 

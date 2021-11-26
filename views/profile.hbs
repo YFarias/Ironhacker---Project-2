@@ -22,6 +22,9 @@
 <h2>Welcome {{user.username}}</h2>
 
 <br>
+    <form action="/edit" method="GET">
+        <button class="edit-btn"><a>Edit</a></button>
+    </form>
 
 <div class="favourites">
     <h3>My Games</h3>
@@ -50,9 +53,6 @@
    <br/>
     {{/each}}
 </div>
-    <form action="/edit" method="GET">
-        <button class="edit-btn"><a>Edit</a></button>
-    </form>
 </div>
 
 
