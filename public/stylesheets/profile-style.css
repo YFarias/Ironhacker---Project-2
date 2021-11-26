@@ -12,6 +12,10 @@
     box-shadow: 0 5px 15px rgb(194, 64, 49, 0.7);
 }
 
+.container h1{
+ color: rgb(194, 64, 49);
+ margin-top: 7%;
+}
 
 .profile-picture{
     background-color: #292929;
@@ -22,8 +26,27 @@
     border-radius: 1px solid crimson;
     font-size: 0.6em;
      /* setting the picture in shades of gray */
+     margin-bottom: 5%;
+}
+.table{
+    display: table;
+    margin: auto;
 }
 
+th, td{
+    color: white;
+    border: 1px solid white;
+    margin: auto;
+    text-align: center;
+    padding: 5px;
+    
+}
+
+.delete-icon{
+    background-color: transparent;
+    border:hidden;
+    cursor: pointer;
+}
 
 
 

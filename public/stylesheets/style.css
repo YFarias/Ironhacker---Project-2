@@ -22,10 +22,10 @@ body {
   
 }
 
-.main-body{
-  height: 100%; /* This will force the footer to be down even without content*/
+/* .main-body{
+  height: 100%; /* This will force the footer to be down even without content
   
-}
+} */
 
 
 /* TheGameList logo  */
@@ -117,7 +117,7 @@ body {
   color: white;
   height: 20px;
   padding: 10px;
-  margin-top: -5px;
+  margin-top: -15px;
   margin-right: 15px;
   border-radius: 8px;
   text-decoration: none;
@@ -191,27 +191,44 @@ body {
   flex-wrap: wrap;
   text-align: center;
   justify-content: center;
+  margin-bottom: 5%;
   
   
 }
 
 .box{
   
-  margin: 15px;
-  padding: 18px;
-  width: 200px;
+  margin: 5%;
+  padding: 20px;
+  width: 210px;
   height: auto;
-  border: 2px solid rgb(194, 64, 49);
+  border: 1px solid rgb(194, 64, 49);
   background-color:#292929;
   color: white;
   text-transform: capitalize;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgb(194, 64, 49, 0.7);
+}
+
+.box:hover{
+  -ms-transform: scale(1); /* IE 9 */
+  -webkit-transform: scale(1); /* Safari 3-8 */
+  transform: scale(1.1); 
+  transition-duration: 0.3s;
 }
 
 .title{
   text-align: center;
   margin-top: 4%;
+  font-size: 2.5em;
 }
 
+.subtitle {
+  color: rgb(194, 64, 49);
+  text-align: center;
+  font-size: 2em;
+  margin-top: 0;
+}
 /* .game-container{
   width: 15%;
   border: 1px solid black;
@@ -224,17 +241,41 @@ body {
 
 
 .game-img{
- height: 15vh;
-  border: 2px solid black;
-  border-radius: 5px;
-  filter:grayscale()
+  height: 20vh;
+  width: 70%;
+  filter:grayscale();
+  border-radius: 50%;
+  margin-bottom: 20px;
 } 
 
+.box p{
+  font-size: 1em;
+  margin-top: -5px;
+}
 
 
 .bold{
   color:rgb(194, 64, 49);
+  background: transparent;
   padding-right: 4px;
+  
+}
+
+.favourite-btn{
+  background: rgb(194, 64, 49);
+  padding: 5px;
+  border-radius: 5px;
+  border: hidden;
+  width: 100px;
+  color: white;
+  margin-bottom: 15px;
+}
+
+.box a{
+  text-decoration: none;
+  color: white;
+  margin-top: 20px;
+  
 }
 /* index container */
 
@@ -402,6 +443,7 @@ body {
   
   width: 80%;
   margin: auto;
+  margin-bottom: 15%;
 }
 
 
@@ -438,6 +480,7 @@ body {
   width: 100%;
   align-items: center;
   text-align: justify;
+
   
 }
 
@@ -470,22 +513,26 @@ body {
 
 .add-game-box{
   margin: auto;
-  width: 100%;
+  width: 30%;
   margin: 10px;
+  
+ 
 }
 
 .add-game-btn{
   background-color: rgb(194, 64, 49);
   color: white;
-  width: 55%;
+  width: 75%;
   height: 40px;
   border-radius: 10px;
   border-style:hidden;
   padding: 8px;
   margin: auto;
   margin-bottom: 30px;
-  margin-top: 10px;
+  margin-top: 20px;
   text-transform: uppercase;
+  margin-right: 20px;
+  
 }
 
 .add-game-btn:hover{
@@ -496,6 +543,21 @@ body {
 
 }
 
+.upload-img{
+  filter:invert();
+  cursor: pointer;
+  
+}
+
+.upload {
+  margin-top: 5px;
+  height: 50px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
 
 .footer{
   color: white;
@@ -504,7 +566,8 @@ body {
   width: 100%;
   height: 100px;
   display: flex;
-  margin-top: 50px;
+  margin-bottom:0;
+ 
   
   
   

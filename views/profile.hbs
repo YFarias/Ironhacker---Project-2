@@ -18,7 +18,25 @@
     <h3>My Games</h3>
     {{#each user.favoriteGames}}
     
-        <p>{{title}}, {{category}}</p>
+    <div class="table">
+     <table>
+        <tr>
+            <th>Game</th>
+            <th>Category</th>
+        </tr>
+
+         <tr>
+            <td>{{title}}</td>
+            <td>{{category}}</td>
+            <td>
+                <form action="/games/{{_id}}/delete" method="POST">
+                    <button type="submit" class="delete-icon"><img src="./.././images/remove.svg"></button>
+                </form>
+            </td>
+        </tr>
+     </table>
+    </div>
+       
         <form action="/games/{{_id}}/delete" method="POST">
             <button type="submit">Delete</button>
         </form>
