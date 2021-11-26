@@ -1,13 +1,14 @@
 
-<h1 class="title">Game List</h1>
+<h1 class="title">The Game list</h1>
+<h3 class="subtitle">Check the latest games</h3>
 
 
 
-
+{{#if gameList}}
 <div class="container">
 {{#each gameList}}
   <div class="box">
-    <p><b class="bold">Image:</b><img src={{image}} alt="game-cover" class="game-img"></p>
+    <p><img src={{image}} alt="game-cover" class="game-img"></p>
     <p><b class="bold">Title:</b> {{title}}</p>
     <p><b class="bold">Category:</b> {{category}}</p>
 
@@ -17,10 +18,16 @@
 
     </form>
 
-    <a href="{{url}}">Where to play</a>
+    <a href="{{url}}" target="_blank">Where to play</a>
   </div>
   {{/each}}
 </div>
+{{else}}
+<div class="game-message">
+  <h2>No games found - Search again</h2>
+</div>
+{{/if}}
+
 
 <script>
 
