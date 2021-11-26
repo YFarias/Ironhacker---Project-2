@@ -19,6 +19,9 @@ router.get("/search", (req, res) => {
   
     .then((gameList) => {
       //array with games found
+      /* if(gameList === false){
+        prompt("No matches were found")
+      } */
       res.render("games/gamelist", { gameList: gameList });
     })
 
