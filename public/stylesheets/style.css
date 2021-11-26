@@ -397,7 +397,6 @@ body {
 .game-img{
   height: 20vh;
   width: 70%;
-  /* filter:grayscale(); */
   border-radius: 50%;
   margin-bottom: 20px;
 } 
