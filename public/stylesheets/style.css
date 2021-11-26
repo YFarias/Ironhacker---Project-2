@@ -6,6 +6,13 @@
   src: url(./assets/cosima.otf);
 }
 
+font-face {
+  font-family: 'Stamp Empire';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Stamp Empire'), url('https://fonts.cdnfonts.com/s/32927/Stamp Empire.woff') format('woff');
+}
+
 /* Media screens - mobile/ipad responsive - Work in progress */
 @media (max-width: 480px) {
   body{
