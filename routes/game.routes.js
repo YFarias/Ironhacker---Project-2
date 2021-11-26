@@ -16,6 +16,7 @@ router.get("/search", (req, res) => {
 
   //Finding the game we want in a more fluid way
   Game.find({ title: { $regex: gameTitle, $options: "i" } })
+  
     .then((gameList) => {
       //array with games found
       res.render("games/gamelist", { gameList: gameList });
