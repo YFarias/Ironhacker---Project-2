@@ -49,7 +49,9 @@ router.get("/profile", isLoggedIn, async (req,res,next) =>{
         console.log('data :', data)
         res.redirect("/profile")
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+     console.log (error)
+    });
 });
 
 
