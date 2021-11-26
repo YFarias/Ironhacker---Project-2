@@ -13,59 +13,75 @@
   <link href="http://fonts.cdnfonts.com/css/casual-softcore" rel="stylesheet">
   <link href="http://fonts.cdnfonts.com/css/polka-b" rel="stylesheet">
   <link href="http://fonts.cdnfonts.com/css/kreon-2" rel="stylesheet">
+  <link href="http://fonts.cdnfonts.com/css/stamp-empire" rel="stylesheet">
                           
                 
 </head>
 <body>
   <div class="flex-wrap">
-
-
   {{!-- Nav bar with the options  --}}
   <div class="header">
-  <div class="nav-container"> <!-- Contains the nav-bar and the search-bar--> 
-    <div class="nav-wrap"> <!-- contains both nav-bars-->
-      <nav class="nav-bar">
-          <!-- If logged in, this will show--> 
-          {{#if user}} 
+    <div class="nav-container"> <!-- Contains the nav-bar and the search-bar--> 
+      <div class="nav-wrap"> <!-- contains both nav-bars-->
+                  {{#if user}} 
+              <nav class="nav-bar">
+                <!-- If logged in, this will show--> 
 
-              <h1 class="logo"><a href="/">TheGameList</a></h1> <!-- To be determined--> 
-              <a href="/">Home</a>
-              <a href="/games">Games</a>
-              <a href="/games/add">Add game</a>
+                  <h1 class="logo"><a href="/">TheGameList</a></h1> <!-- To be determined--> 
+                  <a href="/games">Games</a>
+                  <a href="/games/add">Add game</a>
 
+              </nav>  
+                  <form action="/search" method="GET" class="search-form">
+                    <div class="search-container">
+                      <input type="text" name="gameTitle" placeholder="search game" class="search-bar"> 
+                      <button type="submit" class="search-btn"><img src="./.././images/search-icon.png" alt="search-icon"/></button>
+
+                    </div>
+                  </form>
+
+              <nav class="nav-end">
+              <!-- This icons will show up if the user is logged in--> 
+                <a href="/profile" ><img src="./.././images/profile-icon.png" alt="profile-icon" class="profile-icon"></a>
+                <a href="/logout"><img src="./.././images/logout-icon.png" alt="logout-icon" class="profile-icon"></a>
+              </nav>
+    </div>
+
+    <div class="nav-wrap">
           {{else}}
           <!-- If the user is not logged these will show --> 
-              <h1 class="logo"><a href="/">TheGameList</a></h1> <!-- To be determined--> 
-              <a href="/">Home</a>
-              <a href="/games">Games</a>
-              <a href="/login">Login</a>
-              <a href="/signup">Signup</a>
+          <nav class="nav-bar">
+            <nav class="nav-bar">
+                <!-- If logged in, this will show--> 
+
+                  <h1 class="logo" style="margin-top: 15px;"><a href="/">TheGameList</a></h1> <!-- To be determined--> 
+                  <a href="/games">Games</a>
+                  {{!--  <h1 class="logo"><a href="/">TheGameList</a></h1> --}}
+                  <a href="/login">Login</a>
+                  <a href="/signup">Signup</a>
+              </nav>  
+                  
+
+          </nav>
+              <form action="/search" method="GET" class="search-form">
+                <div class="search-container">
+                  <input type="text" name="gameTitle" placeholder="search game" class="search-bar"> 
+                  <button type="submit" class="search-btn"><img src="./.././images/search-icon.png" alt="search-icon"/></button>
+                
+                </div>
+              </form>
               
           {{/if}}
-    </nav>
+    </div>
 
     <!-- container for the searchbar -->
-    <div class="search-container">
-      <form action="/search" method="GET" class="search-form">
-        <input type="text" name="gameTitle" placeholder="search game" class="search-bar"> 
-        <button type="submit" class="search-btn">Search</button>
-      </form>
-    </div>
   
-      <nav class="nav-end">
-      <!-- This icons will show up if the user is logged in--> 
-        {{#if user}}
-        <a href="/profile" >Profile</a>
-        <a href="/logout">Logout</a>
-       {{/if}}
-
-      </nav>
-    </div>
   </div>
 </div>  
 <div class="main-body">
   {{{body}}}
 </div>
+</body>
   <div class="footer">
     <div class="text">
       <p>Developed by team FY - Fabio & Yuri</p>
@@ -76,5 +92,5 @@
    <script src="/js/script.js"></script>
    
 
-</body>
+
 </html>

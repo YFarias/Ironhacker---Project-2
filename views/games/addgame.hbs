@@ -1,16 +1,57 @@
 
   <!-- This is a form to add a new game to the game list --> 
-  
-  <form action="/games/add" method="POST" class="auth-form">
-  <h1>Games</h1>
+
+<div class="add-game-wrap">
+  <div class="add-game-title">
+  <h1>Creator Zone</h1>
   <h3>Add a new game</h3>
+  </div>
 
-  <label for="name">Name:</label>
-  <input type="text" name="title">
+  <form action="/games/add" method="POST" class="add-game-form" enctype="multipart/form-data">
 
-  
-  <label for="category">Category:</label>
-  <input type="text" name="category">
-  
-     <button type="submit"class="submit-btn">Create Game</button>
+  <div class="boxes">
+  <div class="add-game-box">
+  <label for="name" class="add-form">Name:</label>
+  <br>
+  <input type="text" name="title" placeholder="Game Name">
+</div>
+
+  <div class="add-game-box">
+    <label for="url" class="add-form">Where to play: </label>
+    <br>
+    <input type="text" name="url" placeholder="Game url">
+  </div>
+
+
+  <div class="add-game-box">
+    <label for="category" class="add-form">Category:</label>
+    <br>
+      <select name="category" id="category">
+        <option value="mmorpg">MMORPG</option>
+        <option value="platform">Platform</option>
+        <option value="rpg">RPG</option>
+        <option value="fps">FPS</option>
+        <option value="sports">Sports</option>
+        <option value="adventure">Adventure</option>
+        <option value="horror">Horror</option>
+  </select>
+  </div>
+
+  <div class="add-game-box">
+    <label for="picture">Image</label>
+    <div class="imgProfile">
+      <label class="upload-img"> <!-- to style the upload img--> 
+        <input type="file" name="image"/>
+        <img src="./../.././images/upload.svg" alt="upload-img" class="upload">
+      </label>
+    </div>
+  </div>
+<div class="add-game-box">
+
+     <button type="submit"class="add-game-btn">Create Game</button>
+</div>
 </form>
+
+</div>
+
+ 

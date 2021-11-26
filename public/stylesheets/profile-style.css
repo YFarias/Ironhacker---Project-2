@@ -1,7 +1,10 @@
 /* Styles for the profile view */
 
-.container{
-    background-color: #292929;
+.container-profile{
+   
+    margin-top: 100px;
+    margin: auto;
+    text-align: center;
     color: white;
     display: flex;
     flex-direction: column;
@@ -10,8 +13,13 @@
     border-radius: 4px;
     margin-bottom: 150px;
     box-shadow: 0 5px 15px rgb(194, 64, 49, 0.7);
+
 }
 
+.container-profile h1{
+ color: rgb(194, 64, 49);
+ margin-top: 7%;
+}
 
 .profile-picture{
     background-color: #292929;
@@ -22,8 +30,41 @@
     border-radius: 1px solid crimson;
     font-size: 0.6em;
      /* setting the picture in shades of gray */
+     margin-bottom: 5%;
+}
+.table{
+    display: table;
+    margin: auto;
+    padding: 5px;
+    
 }
 
+th{
+    color: white;
+    padding: 8px;
+    font-size: 1.2em;
+    margin: 5px;
+    text-align: center;
+    background: rgb(194, 64, 49);
+    margin-bottom: 15px;
+
+} 
+
+td{
+    color: white;
+    margin: auto;
+    text-align: center;
+    padding: 0px;
+    
+    
+}
+
+.delete-icon{
+    background-color: transparent;
+    border:hidden;
+    cursor: pointer;
+    filter:invert();
+}
 
 
 
@@ -96,10 +137,7 @@
     transition-duration: 0.4s;
 }
 
-h1 {
-position: relative;
-top: -15%;
-}
+
 
 .imgProfile {
     position: relative;

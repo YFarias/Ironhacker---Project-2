@@ -46,11 +46,17 @@ router.get("/games/add", isLoggedIn, (req, res) => {
   res.render("games/addgame", { user: req.session.user });
 });
 
-router.post("/games/add", (req, res) => {
+router.post("/games/add", fileuploader.single("image"), (req, res) => {
   console.log(req.body);
-  const { title, category } = req.body;
+  console.log(req.file);
+  const { title, category, url} = req.body;
+  let imageUrl = "https://tinyurl.com/96bb7ks"
 
-  Game.create({ title, category })
+  if (req.file){
+    imageUrl = req.file.path
+  }
+  
+  Game.create({ title, category, url, image: imageUrl })
     .then((createdGame) => {
       console.log("game created", createdGame);
       res.redirect("/games");
