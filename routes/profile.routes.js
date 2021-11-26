@@ -53,6 +53,6 @@ router.get("/profile", isLoggedIn, async (req,res,next) =>{
      console.log (error)
     });
 });
-           
+ //check merge          
   
   module.exports = router;
