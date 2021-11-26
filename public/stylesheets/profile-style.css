@@ -1,7 +1,10 @@
 /* Styles for the profile view */
 
-.container{
-    background-color: #292929;
+.container-profile{
+   
+    margin-top: 100px;
+    margin: auto;
+    text-align: center;
     color: white;
     display: flex;
     flex-direction: column;
@@ -10,9 +13,10 @@
     border-radius: 4px;
     margin-bottom: 150px;
     box-shadow: 0 5px 15px rgb(194, 64, 49, 0.7);
+
 }
 
-.container h1{
+.container-profile h1{
  color: rgb(194, 64, 49);
  margin-top: 7%;
 }
@@ -133,10 +137,7 @@ td{
     transition-duration: 0.4s;
 }
 
-h1 {
-position: relative;
-top: -15%;
-}
+
 
 .imgProfile {
     position: relative;
