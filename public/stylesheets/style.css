@@ -6,6 +6,13 @@
   src: url(./assets/cosima.otf);
 }
 
+font-face {
+  font-family: 'Stamp Empire';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Stamp Empire'), url('https://fonts.cdnfonts.com/s/32927/Stamp Empire.woff') format('woff');
+}
+
 /* Media screens - mobile/ipad responsive - Work in progress */
 @media (max-width: 480px) {
   body{
@@ -90,17 +97,11 @@
     margin-top: -10px;
   }
 
-  /* End of media queries */
-  }
- /*  .main-body{
-    
-  } */
-
   .main-body .auth-form{
     width: 70%;
     padding: 30px;
   }
-
+  
   .main-body .auth-form h1{
     font-size: 4em;
     
@@ -108,29 +109,22 @@
   .main-body .auth-form input {
     border-radius: 20px;
   }
-
+  
   .main-body .auth-form .submit-btn{
     width: 35%;
     padding: 2px;
   }
-
+  
   
   .footer{
     bottom: 0;
     height: 20vh;
   }
-
+  /* End of media queries */
 }
-
-@media(max-width: 540px) {
-  body{
-    font-size: 0.4em;
-  }
-
-
-}
-
-
+ /*  .main-body{
+    
+  } */
 
 
 
@@ -392,6 +386,12 @@ body {
   margin-left: 2%;
   
 } */
+
+.game-message{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 300px;
+}
 
 
 .game-img{

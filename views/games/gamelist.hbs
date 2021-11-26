@@ -4,7 +4,7 @@
 
 
 
-
+{{#if gameList}}
 <div class="container">
 {{#each gameList}}
   <div class="box">
@@ -22,6 +22,12 @@
   </div>
   {{/each}}
 </div>
+{{else}}
+<div class="game-message">
+  <h2>No games found - Search again</h2>
+</div>
+{{/if}}
+
 
 <script>
 
